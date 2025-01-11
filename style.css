@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
-  background-color: DimGray;
+  box-sizing: content-box;
+  background-color: black;
   font-family: Arial, "Times New Roman", serif;
 }
