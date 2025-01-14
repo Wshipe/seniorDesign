@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
   box-sizing: content-box;
-  background-color: black;
+  background-color: dimgrey;
   font-family: Arial, "Times New Roman", serif;
+}
+
+.p {
+  border: 3px, dotted, white;
 }
