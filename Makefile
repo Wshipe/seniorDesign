@@ -1,6 +1,6 @@
 CPPFLAGS=$(shell sdl2-config --cflags) $(EXTRA_CPPFLAGS)
 LDLIBS=$(shell sdl2-config --libs) -lGLEW $(EXTRA_LDLIBS)
-EXTRA_LDLIBS?=-lGL
+EXTRA_LDLIBS?=-lGL -lglut
 all: project
 clean:
 	rm -f *.o project
