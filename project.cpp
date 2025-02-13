@@ -1,20 +1,15 @@
-<<<<<<< HEAD
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 
 using namespace std;
 
-int main(int argc, char **argv) {
-
-  return 0;
-=======
 #include "config.h"
 #include <GL/freeglut_std.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 
-GLsizei winWidth = 400, winHeight = 400;
+GLsizei winWidth = 500, winHeight = 500;
 
 GLfloat red = 1.0, green = 1.0, blue = 1.0;
 GLenum renderingMode = GL_SMOOTH;
@@ -52,11 +47,16 @@ void colorSubMenu (GLint colorOption) {
   glutPostRedisplay();
 }
 
+/*
+void sphere() {
+  glColor3f(0, 0, 1);
+}
+*/
+
 void displayTriangle () {
   glClear(GL_COLOR_BUFFER_BIT);
 
-  glShadeModel(renderingMode);
-  glColor3f(red, green, blue);
+  glColor3f(0, green, 0);
 
   glBegin(GL_TRIANGLES);
   glVertex2i(280, 20);
@@ -71,11 +71,8 @@ void displayTriangle () {
 void reshapeFcn (GLint newWidth, GLint newHeight) {
   glViewport(0, 0, newWidth, newHeight);
 
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
-  gluOrtho2D(0, GLfloat (newWidth), 0, GLfloat (newHeight));
-  displayTriangle ();
-  glFlush();
+  winWidth = newWidth;
+  winHeight = newHeight;
 }
 
 int main (int argc, char **argv) {
@@ -105,5 +102,4 @@ int main (int argc, char **argv) {
   glutReshapeFunc(reshapeFcn);
 
   glutMainLoop();
->>>>>>> 5451fea (Menu expample for project.cpp)
 }
